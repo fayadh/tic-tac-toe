@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tic Tac Tor</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<style>
+	td {
+		height: 100px;
+		width: 100px;
+		border: dotted;
+
+	}
+</style>
+<body>
+
+<script>
+	var C0 = $("#C0").html();
+	var C1 = $("#C1").html();
+	var C2 = $("#C2").html();
+	var C3 = $("#C3").html();
+	var C4 = $("#C4").html();
+	var C5 = $("#C5").html();
+	var C6 = $("#C6").html();
+	var C7 = $("#C7").html();
+	var C8 = $("#C8").html();
+
+	$(function() {
+		i = 0;
+		$('.cell').click(function() {
+			// console.log(this.innerHTML);
+				if (i < 9) {
+					if ((i % 2) === 0) {
+						this.innerHTML = 'X';
+						console.log(i);
+						i += 1;
+					} 
+					else if (i === 8) {
+						window.alert("game over!");
+					}
+					else {
+						this.innerHTML = 'O';
+						i++;
+					};
+			};
+		});
+	});
+</script>
+
+	
+<table>
+	<tr> 
+		<td id="C0" class="cell">0</td>
+		<td id="C1" class="cell">1</td> 
+		<td id="C2" class="cell">2</td>
+	</tr>
+	<tr> 
+		<td id="C3" class="cell">3</td>
+		<td id="C4" class="cell">4</td> 
+		<td id="C5" class="cell">5</td>
+	</tr>
+	<tr> 
+		<td id="C6" class="cell">6</td>
+		<td id="C7" class="cell">7</td> 
+		<td id="C8" class="cell">8</td>
+	</tr>
+</table>
+
+
+</body>
+
+</html>
