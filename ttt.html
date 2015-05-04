@@ -11,42 +11,62 @@
 		height: 100px;
 		width: 100px;
 		border: dotted;
-
 	}
 </style>
 <body>
 
 <script>
-	var C0 = $("#C0").html();
-	var C1 = $("#C1").html();
-	var C2 = $("#C2").html();
-	var C3 = $("#C3").html();
-	var C4 = $("#C4").html();
-	var C5 = $("#C5").html();
-	var C6 = $("#C6").html();
-	var C7 = $("#C7").html();
-	var C8 = $("#C8").html();
+	// var C0 = $("#C0").html();
+	// var C1 = $("#C1").html();
+	// var C2 = $("#C2").html();
+	// var C3 = $("#C3").html();
+	// var C4 = $("#C4").html();
+	// var C5 = $("#C5").html();
+	// var C6 = $("#C6").html();
+	// var C7 = $("#C7").html();
+	// var C8 = $("#C8").html();
+
+	var wins = 	[	[0, 1, 2], [3, 4, 5], [6, 7, 8], 
+								[0, 3, 6], [1, 4, 7], [2, 5, 8],
+								[0, 4, 8], [2, 4, 6]	]
 
 	$(function() {
 		i = 0;
-		$('.cell').click(function() {
+			$('.cell').click(function() {
 			// console.log(this.innerHTML);
+
 				if (i < 9) {
 					if ((i % 2) === 0) {
 						this.innerHTML = 'X';
 						console.log(i);
-						i += 1;
-					} 
-					else if (i === 8) {
-						window.alert("game over!");
-					}
-					else {
+						i++;
+					} else {
 						this.innerHTML = 'O';
 						i++;
 					};
 			};
 		});
+
+// from Imran. Doesn't work yet. 
+// Wil fix some other time. 
+		function check() {
+			for (var i=0; i<wins.length; i++) {
+	       var w = wins[i];
+	       var checkXwin = w[0].text() == "X" && w[1].text() == "X" && w[2].text() == "X";
+	       var checkOwin = w[0].text() == "O" && w[1].text() == "O" && w[2].text() == "O";
+	       if (checkXwin) {
+	           console.log("X");
+	           return "X Wins!";
+	       } else if (checkOwin) {
+	           console.log("O");
+	           return "O Wins!";
+	       }
+	     };	
+		};
 	});
+
+
+
 </script>
 
 	
